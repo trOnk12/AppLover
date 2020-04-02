@@ -1,7 +1,8 @@
-package com.example.applover
+package com.example.applover.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.applover.R
 
 class MainActivity : AppCompatActivity() {
 
