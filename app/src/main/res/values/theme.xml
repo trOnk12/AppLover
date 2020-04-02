@@ -1,11 +1,14 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
         <item name="colorPrimary">@color/darkGray</item>
         <item name="colorPrimaryDark">@color/darkGray</item>
         <item name="colorAccent">@color/lightGreen</item>
+        <item name="android:windowBackground">@color/darkGray</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearence.AppLover.SmallComponent</item>
+        <item name="textInputStyle">@style/TextStyle.AppLover.TextInputStyle</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.AppLover.Subtitle1</item>
+        <item name="materialButtonStyle">@style/ButtonStyle.AppLover.Contained</item>
     </style>
 
 </resources>

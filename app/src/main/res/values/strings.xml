@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AppLover</string>
+    <string name="tv_email_address_hint">Email address</string>
+    <string name="tv_password_hint">Password</string>
+    <string name="bt_login_text">Login</string>
+    <string name="h1_login_text">Login</string>
+    <string name="logo_content_description">Logo of the application.</string>
 </resources>
