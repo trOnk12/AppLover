@@ -1,7 +1,6 @@
 package com.example.applover.ui.login
 
 import LoginSharedViewModel
-import android.os.Binder
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
