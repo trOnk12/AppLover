@@ -1,14 +1,13 @@
-import androidx.lifecycle.viewModelScope
-import kotlinx.coroutines.launch
-
-``package com.example.applover.ui.login
+package com.example.applover.ui.login
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.applover.core.functional.Result
 import com.example.applover.domain.usecase.LoginCredentials
 import com.example.applover.domain.usecase.LoginUseCase
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class LoginSharedViewModel

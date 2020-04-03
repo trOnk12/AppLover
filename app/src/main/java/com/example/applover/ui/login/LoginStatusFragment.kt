@@ -1,6 +1,5 @@
 package com.example.applover.ui.login
 
-import LoginSharedViewModel
 import android.os.Bundle
 import android.widget.Toast
 import androidx.fragment.app.Fragment
