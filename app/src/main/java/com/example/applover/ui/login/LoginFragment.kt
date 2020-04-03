@@ -6,5 +6,4 @@ import com.example.applover.R
 class LoginFragment : Fragment(R.layout.login_fragment) {
 
 
-
 }
