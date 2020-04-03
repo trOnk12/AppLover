@@ -26,5 +26,4 @@ class AppLoverApp : Application() {
             .build()
     }
 
-
 }
