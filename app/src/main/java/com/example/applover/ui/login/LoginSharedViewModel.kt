@@ -21,7 +21,7 @@ class LoginSharedViewModel
         get() = _loginState
 
     fun login(email: String, password: String) {
-        _loginState.value = LoginState.isLoading
+        _loginState.value = LoginState.IsLoading
         viewModelScope.launch {
             when (val loginResult =
                 loginUseCase(LoginCredentials(email = email, password = password))) {
@@ -35,7 +35,7 @@ class LoginSharedViewModel
 }
 
 sealed class LoginState {
-    object isLoading : LoginState()
+    object IsLoading : LoginState()
     object Success : LoginState()
     data class Failure(val message: String?) : LoginState()
 }
