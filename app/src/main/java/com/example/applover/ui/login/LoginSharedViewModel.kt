@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.applover.core.functional.Result
+import com.example.applover.core.functional.SingleLiveData
 import com.example.applover.domain.usecase.LoginCredentials
 import com.example.applover.domain.usecase.LoginUseCase
 import kotlinx.coroutines.launch
@@ -15,7 +16,7 @@ class LoginSharedViewModel
     private val loginUseCase: LoginUseCase
 ) : ViewModel() {
 
-    private val _loginState: MutableLiveData<LoginState> = MutableLiveData()
+    private val _loginState: SingleLiveData<LoginState> = SingleLiveData()
     val loginState: LiveData<LoginState>
         get() = _loginState
 
