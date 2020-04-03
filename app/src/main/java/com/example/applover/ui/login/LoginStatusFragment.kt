@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.navGraphViewModels
 import com.example.applover.R
 import com.example.applover.core.extension.observe
+import kotlinx.android.synthetic.main.login_status_fragment.*
 
 class LoginStatusFragment : Fragment(R.layout.login_status_fragment) {
 
