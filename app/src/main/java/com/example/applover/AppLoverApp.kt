@@ -3,6 +3,7 @@ package com.example.applover
 import android.app.Application
 import android.content.Context
 import com.example.applover.di.component.CoreComponent
+import com.example.applover.di.component.DaggerCoreComponent
 import com.example.applover.di.module.ContextModule
 
 class AppLoverApp : Application() {

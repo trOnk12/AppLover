@@ -1,5 +1,6 @@
 package com.example.applover.di.module
 
+import com.example.applover.BuildConfig
 import com.example.applover.data.network.service.LoginService
 import dagger.Module
 import dagger.Provides

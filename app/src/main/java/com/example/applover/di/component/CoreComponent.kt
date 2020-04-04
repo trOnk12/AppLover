@@ -1,5 +1,7 @@
 package com.example.applover.di.component
 
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.example.applover.data.repository.LoginRepository
 import com.example.applover.di.module.ContextModule
 import com.example.applover.di.module.NetworkModule
@@ -14,5 +16,7 @@ import javax.inject.Singleton
 interface CoreComponent {
 
     fun loginRepository(): LoginRepository
+
+    fun viewModelFactory(): ViewModelProvider.Factory
 
 }

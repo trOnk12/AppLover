@@ -5,4 +5,6 @@
     <string name="bt_login_text">Login</string>
     <string name="h1_login_text">Login</string>
     <string name="logo_content_description">Logo of the application.</string>
+    <string name="succes_status">Success</string>
+    <string name="error_status">Failure</string>
 </resources>

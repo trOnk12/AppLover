@@ -8,11 +8,13 @@ import com.example.applover.core.functional.Result
 import com.example.applover.core.functional.SingleLiveData
 import com.example.applover.domain.usecase.LoginCredentials
 import com.example.applover.domain.usecase.LoginUseCase
+import com.example.applover.util.CredentialValidator
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class LoginSharedViewModel
+class LoginViewModel
 @Inject constructor(
+    private val credentialValidator : CredentialValidator,
     private val loginUseCase: LoginUseCase
 ) : ViewModel() {
 
@@ -26,8 +28,7 @@ class LoginSharedViewModel
             when (val loginResult =
                 loginUseCase(LoginCredentials(email = email, password = password))) {
                 is Result.Success -> _loginState.value = LoginState.Success
-                is Result.Error -> _loginState.value =
-                    LoginState.Failure(loginResult.exception.message)
+                is Result.Error -> _loginState.value = LoginState.Failure(loginResult.exception.message)
             }
         }
     }

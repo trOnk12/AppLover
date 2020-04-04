@@ -2,7 +2,7 @@ package com.example.applover.di.module.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.applover.ui.login.LoginSharedViewModel
+import com.example.applover.ui.login.LoginViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
@@ -15,7 +15,7 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(LoginSharedViewModel::class)
-    internal abstract fun loginSharedViewModel(viewModel: LoginSharedViewModel): ViewModel
+    @ViewModelKey(LoginViewModel::class)
+    internal abstract fun loginViewModel(viewModel: LoginViewModel): ViewModel
 
 }

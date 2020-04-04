@@ -4,22 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/loginFragment">
-    <navigation
-        android:id="@+id/loginNavigation"
-        app:startDestination="@id/loginStatusFragment">
-        <fragment
-            android:id="@+id/loginStatusFragment"
-            android:name="com.example.applover.ui.login.LoginStatusFragment"
-            android:label="LoginStatusFragment"
-            tools:layout="@layout/login_status_fragment" />
-        <fragment
-            android:id="@+id/loginFragment"
-            android:name="com.example.applover.ui.login.LoginFragment"
-            android:label="LoginFragment"
-            tools:layout="@layout/login_fragment">
-            <action
-                android:id="@+id/action_loginFragment_to_loginStatusFragment"
-                app:destination="@id/loginStatusFragment" />
-        </fragment>
-    </navigation>
+
+    <fragment
+        tools:layout="@layout/login_fragment"
+        android:id="@+id/loginFragment"
+        android:name="com.example.applover.ui.login.LoginFragment"
+        android:label="LoginFragment" />
+
 </navigation>
