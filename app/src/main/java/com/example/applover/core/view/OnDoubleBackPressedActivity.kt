@@ -13,8 +13,9 @@ abstract class OnDoubleBackPressedActivity(@LayoutRes layoutId: Int) : AppCompat
             super.onBackPressed()
             return
         }
-
+        doubleBackToExitPressedOnce = true;
         finish()
         Handler().postDelayed(Runnable { doubleBackToExitPressedOnce = false }, 2000)
     }
+
 }
