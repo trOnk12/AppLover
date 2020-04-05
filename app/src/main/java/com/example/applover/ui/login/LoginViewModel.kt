@@ -51,7 +51,7 @@ class LoginViewModel
             when (val loginResult =
                 loginUseCase(
                     LoginCredentials(
-                        email = "login@applover.pl",
+                        email = "login@appover.pl",
                         password = "password123"
                     )
                 )) {

@@ -1,14 +1,19 @@
 package com.example.applover.data.network.service
 
+import com.example.applover.data.network.util.ErrorParser
+import com.example.applover.data.network.api.LoginApi
+import com.example.applover.data.network.util.CallAdapter
 import com.example.applover.domain.usecase.LoginCredentials
-import retrofit2.http.Body
-import retrofit2.http.Header
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import javax.inject.Inject
 
-interface LoginService {
+class LoginService
+@Inject constructor(
+    errorParser: ErrorParser,
+    private val loginApi: LoginApi
+) : CallAdapter<LoginCredentials>(errorParser) {
 
-    @POST("api/v1/login")
-    suspend fun login(@Body loginCredentials: LoginCredentials)
+    override suspend fun execute(params: LoginCredentials) {
+        loginApi.login(params)
+    }
 
 }
