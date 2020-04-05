@@ -6,7 +6,7 @@ import retrofit2.http.POST
 
 interface LoginService {
 
-    @POST("/login")
-    fun login(@Body loginCredentials: LoginCredentials)
+    @POST("api/v1/login")
+    suspend fun login(@Body loginCredentials: LoginCredentials)
 
 }

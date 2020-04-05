@@ -10,7 +10,7 @@ class LoginRepository
     private val loginService: LoginService
 ) : ILoginRepository {
 
-    override fun login(email: String, password: String) {
+    override suspend fun login(email: String, password: String) {
         loginService.login(LoginCredentials(email = email, password = password))
     }
 

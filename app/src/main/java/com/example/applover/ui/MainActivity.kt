@@ -1,9 +1,6 @@
 package com.example.applover.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import com.example.applover.R
+import com.example.applover.core.view.OnDoubleBackPressedActivity
 
-class MainActivity : AppCompatActivity(R.layout.main_activity) {
-
-
-}
+class MainActivity : OnDoubleBackPressedActivity(R.layout.main_activity)

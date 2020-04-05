@@ -1,15 +1,17 @@
 package com.example.applover.ui.login
 
 import android.os.Bundle
+import android.transition.TransitionInflater
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.navGraphViewModels
 import com.example.applover.R
 import com.example.applover.core.extension.observe
+import com.example.applover.core.extension.startTransition
 import com.example.applover.databinding.LoginStatusFragmentBinding
+import com.google.android.material.snackbar.Snackbar
 
 class LoginStatusFragment : Fragment(R.layout.login_status_fragment) {
 
@@ -36,21 +38,35 @@ class LoginStatusFragment : Fragment(R.layout.login_status_fragment) {
         }
     }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        sharedElementEnterTransition =
+            TransitionInflater.from(context).inflateTransition(android.R.transition.move)
+    }
+
     private fun onLoginSuccess() {
-        loginStatusFragmentBinding.tvStatus.apply {
-            text = requireContext().getString(R.string.succes_status)
-            visibility = View.VISIBLE
-        }
-        loginStatusFragmentBinding.progressView.visibility = View.GONE
+        updateStatusMessage(requireContext().getString(R.string.succes_status))
     }
 
     private fun onLoginFailure(message: String?) {
-        loginStatusFragmentBinding.tvStatus.apply {
-            text = requireContext().getString(R.string.error_status)
-            visibility = View.VISIBLE
-        }
+        updateStatusMessage(requireContext().getString(R.string.error_status))
+        informUser(message)
+    }
+
+    private fun informUser(message: String?) {
         message?.let {
-            Toast.makeText(requireContext(), message, Toast.LENGTH_LONG).show()
+            Snackbar.make(loginStatusFragmentBinding.loginStatusView, message, Snackbar.LENGTH_LONG)
+                .show()
+        }
+    }
+
+    private fun updateStatusMessage(message: String) {
+        startTransition(loginStatusFragmentBinding.transitionContainer) {
+            loginStatusFragmentBinding.tvStatus.apply {
+                text = message
+                visibility = View.VISIBLE
+            }
+            loginStatusFragmentBinding.progressView.visibility = View.GONE
         }
     }
 

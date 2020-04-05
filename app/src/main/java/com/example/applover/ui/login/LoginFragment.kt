@@ -5,14 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.widget.doAfterTextChanged
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.navGraphViewModels
 import com.example.applover.AppLoverApp
 import com.example.applover.R
 import com.example.applover.core.extension.observe
 import com.example.applover.databinding.LoginFragmentBinding
+import com.example.applover.util.CredentialValidator
+import java.util.*
 import javax.inject.Inject
 
 class LoginFragment : Fragment(R.layout.login_fragment) {
@@ -49,16 +53,33 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        loginFragmentBinding.btLogin.setOnClickListener {
-            loginViewModel.login(
-                email = "login@applover.pl",
-                password = "password123"
-            )
+        loginFragmentBinding.apply {
+            btLogin.setOnClickListener {
+                loginViewModel.login(
+                    email = etEmail.text.toString(),
+                    password = etPassword.text.toString()
+                )
+            }
+            etEmail.doAfterTextChanged {
+                loginFragmentBinding.tfEmailAddress.apply {
+                    if (isErrorEnabled) {
+                        error = null
+                    }
+                }
+            }
+            etPassword.doAfterTextChanged {
+                loginFragmentBinding.tfPassword.apply {
+                    if (isErrorEnabled) {
+                        error = null
+                    }
+                }
+            }
         }
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        observe(loginViewModel.validationErrors, ::handleErrors)
         observe(loginViewModel.loginState) { loginState ->
             when (loginState) {
                 is LoginState.IsLoading -> navigateLoginStatus()
@@ -66,8 +87,28 @@ class LoginFragment : Fragment(R.layout.login_fragment) {
         }
     }
 
+    private fun handleErrors(errors: HashMap<CredentialValidator.CredentialType, String>) {
+        errors.forEach { error ->
+            when (error.key) {
+                is CredentialValidator.CredentialType.Password -> showPasswordError(error.value)
+                is CredentialValidator.CredentialType.Email -> showEmailError(error.value)
+            }
+        }
+    }
+
+    private fun showEmailError(value: String) {
+        loginFragmentBinding.tfEmailAddress.error = value
+    }
+
+    private fun showPasswordError(value: String) {
+        loginFragmentBinding.tfPassword.error = value
+    }
+
     private fun navigateLoginStatus() {
-       // findNavController().navigate(R.id.loginStatusFragment)
+        val extras = FragmentNavigatorExtras(
+            loginFragmentBinding.ivLogo to "iv_logo"
+        )
+        findNavController().navigate(R.id.loginStatusFragment, null, null, extras)
     }
 
 }

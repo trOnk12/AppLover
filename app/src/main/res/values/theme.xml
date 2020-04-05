@@ -9,6 +9,8 @@
         <item name="textInputStyle">@style/TextStyle.AppLover.TextInputStyle</item>
         <item name="textAppearanceSubtitle1">@style/TextAppearance.AppLover.Subtitle1</item>
         <item name="materialButtonStyle">@style/ButtonStyle.AppLover.Contained</item>
+        <item name="snackbarStyle">@style/Widget.SnackBar.AppLover</item>
+
     </style>
 
 </resources>

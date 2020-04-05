@@ -3,30 +3,40 @@
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/login_status_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <ImageView
+            android:transitionName="iv_logo"
             android:layout_width="151dp"
             android:layout_height="151dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="132dp"
             android:src="@drawable/ic_applover" />
 
+        <LinearLayout
+            android:layout_marginTop="35dp"
+            android:gravity="center"
+            android:id="@+id/transition_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <include
             android:id="@+id/progress_view"
             layout="@layout/progressbar_layout" />
 
         <TextView
+            style="@style/h2_text_style"
             android:id="@+id/tv_status"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="35dp"
             android:textAlignment="center"
             android:visibility="gone"
             tools:text="Success!"
             tools:visibility="gone" />
 
+    </LinearLayout>
     </LinearLayout>
 </layout>
