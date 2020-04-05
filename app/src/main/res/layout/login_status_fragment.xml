@@ -29,10 +29,9 @@
             <TextView
                 android:id="@+id/tv_status"
                 style="@style/TextAppearence.AppLover.H2"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:visibility="gone"
-                tools:text="Success!"
-                tools:visibility="gone" />
+                tools:text="Success!" />
 
         </LinearLayout>
     </LinearLayout>

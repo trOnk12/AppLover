@@ -1,5 +1,7 @@
 package com.example.applover.data.network.util
 
+import com.example.applover.data.network.util.parser.ErrorParser
+
 abstract class CallAdapter<T>(
     private val errorParser: ErrorParser
 ) {
