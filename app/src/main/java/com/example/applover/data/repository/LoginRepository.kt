@@ -1,6 +1,5 @@
 package com.example.applover.data.repository
 
-import com.example.applover.data.network.api.LoginApi
 import com.example.applover.data.network.service.LoginService
 import com.example.applover.domain.repository.ILoginRepository
 import com.example.applover.domain.usecase.LoginCredentials
