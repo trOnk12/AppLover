@@ -1,21 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="h2_text_style">
-        <item name="android:textSize">26sp</item>
-        <item name="android:textColor">@color/white</item>
+    <style name="TextAppearence.AppLover.H2" parent="">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/h2_margin</item>
+        <item name="android:textSize">@dimen/h2_size</item>
+        <item name="android:textColor">@color/headerColor</item>
     </style>
 
-    <style name="TextStyle.AppLover.TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="android:textColorHint">@color/white</item>
+
+    <style name="Widget.AppLover.Logo.Base" parent="">
+        <item name="android:src">@drawable/ic_applover</item>
+        <item name="android:contentDescription">@string/logo_content_description</item>
+    </style>
+
+    <style name="Widget.AppLover.Logo.Medium" parent="Widget.AppLover.Logo.Base">
+        <item name="android:layout_width">@dimen/login_logo_size_medium</item>
+        <item name="android:layout_height">@dimen/login_logo_size_medium</item>
+    </style>
+
+    <style name="Widget.AppLover.Logo.Large" parent="Widget.AppLover.Logo.Base">
+        <item name="android:layout_width">@dimen/login_logo_size_large</item>
+        <item name="android:layout_height">@dimen/login_logo_size_large</item>
+    </style>
+
+    <style name="TextAppearence.AppLover.TextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/login_text_input_layout_margin</item>
+        <item name="android:layout_marginBottom">@dimen/login_text_input_layout_margin</item>
+        <item name="android:textColorHint">@color/textInputHintColor</item>
         <item name="boxStrokeColor">@color/text_input_box_stroke</item>
         <item name="boxStrokeWidth">1dp</item>
-        <item name="hintTextColor">@color/white</item>
+        <item name="hintTextColor">@color/textEditHintColor</item>
     </style>
 
-    <style name="ButtonStyle.AppLover.Contained" parent="Widget.MaterialComponents.Button">
-        <item name="android:textColor">@color/white</item>
-        <item name="android:backgroundTint">@color/lightGreen</item>
+    <style name="Widget.AppLover.Button.Contained" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">9dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textColor">@color/buttonTextColor</item>
+        <item name="android:backgroundTint">@color/buttonBackgroundTint</item>
     </style>
 
     <style name="ShapeAppearence.AppLover.SmallComponent" parent="">
@@ -28,8 +56,8 @@
     </style>
 
     <style name="Widget.SnackBar.AppLover" parent="Widget.MaterialComponents.Snackbar">
-        <item name="android:background">@color/lightGreen</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/snackBarBackgroundTint</item>
+        <item name="android:textColor">@color/snackBarTextColor</item>
     </style>
 
 </resources>

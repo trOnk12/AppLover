@@ -11,7 +11,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="62dp"
+            android:layout_marginTop="72dp"
             android:orientation="vertical"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
@@ -24,20 +24,14 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/iv_logo"
-                    android:layout_width="97dp"
-                    android:layout_height="97dp"
                     android:layout_marginBottom="23dp"
-                    android:contentDescription="@string/logo_content_description"
-                    android:src="@drawable/ic_applover"
+                    android:id="@+id/iv_logo"
+                    style="@style/Widget.AppLover.Logo.Medium"
                     android:transitionName="iv_logo" />
 
                 <TextView
                     android:id="@+id/tv_login"
-                    style="@style/h2_text_style"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="39dp"
+                    style="@style/TextAppearence.AppLover.H2"
                     android:text="@string/h1_login_text" />
 
             </LinearLayout>
@@ -54,10 +48,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tf_email_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="9dp"
-                    android:layout_marginBottom="9dp"
+                    style="@style/TextAppearence.AppLover.TextInputStyle"
                     android:hint="@string/tv_email_address_hint">
 
                     <com.google.android.material.textfield.TextInputEditText
@@ -69,10 +60,7 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/tf_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="9dp"
-                    android:layout_marginBottom="9dp"
+                    style="@style/TextAppearence.AppLover.TextInputStyle"
                     android:hint="@string/tv_password_hint"
                     app:passwordToggleEnabled="true">
 
@@ -86,11 +74,7 @@
 
                 <Button
                     android:id="@+id/bt_login"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="9dp"
-                    android:paddingTop="14dp"
-                    android:paddingBottom="14dp"
+                    style="@style/Widget.AppLover.Button.Contained"
                     android:text="@string/bt_login_text" />
             </LinearLayout>
         </LinearLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="h2_size">26sp</dimen>
+    <dimen name="login_logo_size_medium">97dp</dimen>
+    <dimen name="login_logo_size_large">151dp</dimen>
+    <dimen name="h2_margin">39dp</dimen>
+    <dimen name="login_text_input_layout_margin">9dp</dimen>
+    <dimen name="button_padding">14dp</dimen>
+    <dimen name="button_margin">9dp</dimen>
+
+</resources>

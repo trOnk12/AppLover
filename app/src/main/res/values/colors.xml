@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="darkGray">#534C5F</color>
-    <color name="lightGreen">#1DE278</color>
-    <color name="white">#FFFFFF</color>
+    <color name="headerColor">@color/white</color>
+    <color name="buttonTextColor">@color/white</color>
+    <color name="buttonBackgroundTint">@color/lightGreen</color>
+    <color name="snackBarTextColor">@color/white</color>
+    <color name="snackBarBackgroundTint">@color/lightGreen</color>
+    <color name="textInputHintColor">@color/white</color>
+    <color name="textEditHintColor">@color/white</color>
 </resources>
